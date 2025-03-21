@@ -1,0 +1,31 @@
+name: Sync to Adobe Git
+
+on:
+  push:
+    branches:
+      - develop
+      - main  
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+
+      - name: Determine current branch and push to Adobe Git
+        run: |
+          BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          if [[ "$BRANCH" == "develop" || "$BRANCH" == "main" ]]; then
+            echo "✅ Successfully pushed $BRANCH to Adobe Git"
+          else
+            echo "⏭ Skipping sync for branch: $BRANCH"
+          fi
