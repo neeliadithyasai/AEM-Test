@@ -6,4 +6,6 @@
     jcr:title="Custom Carousel - 3 Cards"
     jcr:description="A carousel component that displays 3 cards at a time with slide-by-one navigation"
     sling:resourceSuperType="core/wcm/components/carousel/v1/carousel"
-    componentGroup="Your Project - Content"/>
+    componentGroup="Your Project - Content"
+    cq:isContainer="{Boolean}true"
+    cq:templatePath="/apps/your-project/components/carousel/template"/>

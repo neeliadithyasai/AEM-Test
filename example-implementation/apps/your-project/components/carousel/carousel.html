@@ -1,5 +1,6 @@
 <div data-sly-use.carousel="com.adobe.cq.wcm.core.components.models.Carousel"
-     data-sly-test="${carousel.items}"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${carousel.items.size > 0}"
      class="cmp-carousel custom-carousel-3cards"
      data-cmp-is="carousel"
      data-cmp-autoplay="${carousel.autoplay ? 'true' : 'false'}"
@@ -40,3 +41,6 @@
         </button>
     </div>
 </div>
+
+<!-- Authoring placeholder when no content -->
+<sly data-sly-call="${template.placeholder @ isEmpty=!hasContent, classAppend='cmp-carousel'}"></sly>
