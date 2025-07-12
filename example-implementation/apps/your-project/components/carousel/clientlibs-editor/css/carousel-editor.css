@@ -14,6 +14,34 @@
     font-size: 14px;
 }
 
+/* Authoring container styling */
+.carousel-authoring-container {
+    min-height: 200px;
+    border: 2px dashed #007cba;
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.carousel-authoring-container::before {
+    content: "Carousel: Drop components here";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    background: #007cba;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    z-index: 10;
+}
+
+.carousel-authoring-container .section {
+    border: none;
+    background: transparent;
+}
+
 /* Authoring mode: show all items in a grid for easy editing */
 .cq-editmode .custom-carousel-3cards .cmp-carousel__track {
     display: grid;
