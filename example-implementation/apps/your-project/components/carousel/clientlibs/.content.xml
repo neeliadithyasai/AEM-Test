@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:ClientLibraryFolder"
+    categories="[your-project.components.carousel]"
+    dependencies="[core.wcm.components.carousel.v1]"
+    embed="[your-project.components.carousel.css,your-project.components.carousel.js]"/>

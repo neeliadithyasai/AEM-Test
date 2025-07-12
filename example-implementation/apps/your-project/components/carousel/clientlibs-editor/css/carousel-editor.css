@@ -1,0 +1,75 @@
+/* Editor-specific styles for authoring mode */
+.cmp-carousel.cq-placeholder {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    background: #f5f5f5;
+}
+
+.cmp-carousel.cq-placeholder::before {
+    content: "Drop components here to create carousel slides";
+    color: #666;
+    font-size: 14px;
+}
+
+/* Authoring mode: show all items in a grid for easy editing */
+.cq-editmode .custom-carousel-3cards .cmp-carousel__track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    transform: none !important;
+}
+
+.cq-editmode .custom-carousel-3cards .cmp-carousel__item {
+    flex: none;
+    padding: 10px;
+    border: 1px dashed #007cba;
+    position: relative;
+    min-height: 150px;
+}
+
+.cq-editmode .custom-carousel-3cards .cmp-carousel__item::before {
+    content: "Slide " counter(item-counter);
+    counter-increment: item-counter;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+    color: #007cba;
+    background: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #007cba;
+}
+
+/* Reset counter for each carousel */
+.cq-editmode .custom-carousel-3cards .cmp-carousel__track {
+    counter-reset: item-counter;
+}
+
+/* Hide navigation in edit mode */
+.cq-editmode .custom-carousel-3cards .cmp-carousel__actions,
+.cq-editmode .custom-carousel-3cards .cmp-carousel__indicators {
+    display: none;
+}
+
+/* Highlight the carousel container in edit mode */
+.cq-editmode .custom-carousel-3cards {
+    border: 2px solid #007cba;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.cq-editmode .custom-carousel-3cards::before {
+    content: "3-Card Carousel";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    background: #007cba;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+}
